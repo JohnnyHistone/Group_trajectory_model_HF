@@ -1,0 +1,2 @@
+
+\copy ( SELECT p."Author",f."IdForum",f."Site",(EXTRACT(YEAR FROM p."Timestamp")) AS "Year", (EXTRACT(MONTH FROM p."Timestamp")) AS "Month", COUNT(EXTRACT(MONTH FROM p."Timestamp")) /* join tables to get subforum */ FROM "Forum" AS f INNER JOIN "Thread" AS t on f."IdForum" = t."Forum" /* insert site here */ AND t."Site" = 6 AND f."Site" = 6 INNER JOIN "Post" AS p on t."IdThread" = p."Thread" AND p."Site" = 6	GROUP BY p."Author", f."IdForum", f."Site", (EXTRACT(YEAR FROM p."Timestamp")), (EXTRACT(MONTH FROM p."Timestamp")) ) to '~/crimebbtestoutput220119.csv' with csv

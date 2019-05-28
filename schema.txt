@@ -1,0 +1,6 @@
+PART 0      SQL query to get LONG format trajectories
+PART 1      Python process data into WIDE trajectories
+PART 2      Python group subforums
+PART 3	    Stata run trajectories
+PART 4      Link trajectories to user list
+PART 5      Make graphs, frequency tables and tag key actors
